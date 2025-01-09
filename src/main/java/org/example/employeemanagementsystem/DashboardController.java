@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class DashboardController {
     @FXML
     private Button logout;
@@ -13,7 +15,7 @@ public class DashboardController {
     public  void logout(){
        try {
            logout.getScene().getWindow().hide();
-           Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+           Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
            Stage stage = new Stage();
            Scene scene = new Scene(root);
 
